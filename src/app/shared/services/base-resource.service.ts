@@ -17,7 +17,6 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     protected jsonDataToResourceFn: ((jsonData: any) => T)
     ) {
       this.http = injector.get(HttpClient);
-      console.log(this);
 
     }
 
@@ -65,7 +64,6 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
   // PROTECTED METHODS
 
   protected jsonDataToResources(jsonData: any[]): T[] {
-    console.log(this);
 
     const resources: T[] = [];
     jsonData.forEach(
