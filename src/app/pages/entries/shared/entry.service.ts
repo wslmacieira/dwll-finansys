@@ -28,7 +28,7 @@ export class EntryService extends BaseResourceService<Entry>{
     return this.setCategoryAndSendToServer(entry, super.update.bind(this))
   }
 
-  getByMonthAndYear(month: number, year: number) {
+  getByMonthAndYear(month: number, year: number): Observable<Entry[]> {
     return this.getAll().pipe(
       map(entries => this.filterByMonthAndYear(entries, month, year))
     )
@@ -54,7 +54,7 @@ export class EntryService extends BaseResourceService<Entry>{
       if(monthMatches && yearMatches) {
         return entry;
       }
-      return entry
+      return
     })
   }
 
