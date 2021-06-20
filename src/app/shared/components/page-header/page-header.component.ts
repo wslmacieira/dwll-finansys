@@ -10,6 +10,9 @@ export class PageHeaderComponent implements OnInit {
   @Input('page-title')
   pageTitle!: string;
 
+  @Input('show-button')
+  showButton: boolean = true;
+
   @Input('button-class')
   buttonClass!: string;
 
